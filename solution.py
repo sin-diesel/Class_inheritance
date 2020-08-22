@@ -67,6 +67,24 @@ class Truck(CarBase):
     def get_info(self):
         super().get_info()
         print("Truck dimensions: ", self._body_length, self._body_width, self._body_height)
+
+    def get_body_volume(self):
+        return self._body_length * self._body_width * self._body_height
+
+
+class Car(CarBase):
+
+    def __init__(self, brand=None, photo_file_name=None, carrying=None, passenger_seats_count=None):
+        
+        super().__init__("car", brand, photo_file_name, carrying)
+
+        if DEBUG:
+            print("Initializing car with passengers seats count: ", passenger_seats_count)
+        self._passenger_seats_count = passenger_seats_count
+
+        def get_info(self):
+            super().get_info()
+            print("Car passenger seats count: ", self._passenger_seats_count)
     
 
 
